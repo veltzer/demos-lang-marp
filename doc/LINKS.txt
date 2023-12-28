@@ -1,2 +1,6 @@
-https://marp.app/
-https://www.npmjs.com/package/@marp-team/marp-cli
+The homepage:
+	https://marp.app/
+The npm package for the cli tools:
+	https://www.npmjs.com/package/@marp-team/marp-cli
+The vscode plugin:
+	https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode
