@@ -72,9 +72,9 @@ clean_hard:
 ############
 $(MARP_PDF): out/%.pdf: %.md
 	$(info doing [$@])
-	$(Q)pymakehelper only_print_on_error marp --pdf --output $@ $<
+	$(Q)pymakehelper only_print_on_error node_modules/.bin/marp --pdf --output $@ $<
 	$(Q)pymakehelper touch_mkdir $@
 $(MARP_PPTX): out/%.pptx: %.md
 	$(info doing [$@])
-	$(Q)pymakehelper only_print_on_error marp --quiet --pptx --output $@ $<
+	$(Q)pymakehelper only_print_on_error node_modules/.bin/marp --quiet --pptx --output $@ $<
 	$(Q)pymakehelper touch_mkdir $@
