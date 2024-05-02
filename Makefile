@@ -49,6 +49,8 @@ ifeq ($(DO_MARP_HTML),1)
 ALL+=$(MARP_HTML)
 endif # DO_MARP_HTML
 
+MARK_DEPENDS=marp.config.js
+
 #########
 # rules #
 #########
@@ -78,15 +80,15 @@ clean_hard:
 ############
 # patterns #
 ############
-$(MARP_PDF): out/%.pdf: %.md
+$(MARP_PDF): out/%.pdf: %.md $(MARP_DEPENDS)
 	$(info doing [$@])
 	$(Q)mkdir -p $(dir $@)
 	$(Q)pymakehelper only_print_on_error node_modules/.bin/marp --pdf --output $@ $<
-$(MARP_PPTX): out/%.pptx: %.md
+$(MARP_PPTX): out/%.pptx: %.md $(MARP_DEPENDS)
 	$(info doing [$@])
 	$(Q)mkdir -p $(dir $@)
 	$(Q)pymakehelper only_print_on_error node_modules/.bin/marp --quiet --pptx --output $@ $<
-$(MARP_HTML): out/%.html: %.md
+$(MARP_HTML): out/%.html: %.md $(MARP_DEPENDS)
 	$(info doing [$@])
 	$(Q)mkdir -p $(dir $@)
 	$(Q)pymakehelper only_print_on_error node_modules/.bin/marp --html --output $@ $<

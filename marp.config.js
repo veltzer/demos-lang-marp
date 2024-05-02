@@ -12,3 +12,8 @@ module.exports = {
     },
   },
 };
+
+const markdownItAdmon = require('markdown-it-admon')
+const markdownItMermaid = require('markdown-it-mermaid')
+
+module.exports = ({ marp }) => marp.use(markdownItMermaid).use(markdownItAdmon)
