@@ -21,7 +21,6 @@ https://marp.app/
 
 Split pages by horizontal ruler (`---`). It's very simple! :satisfied:
 
-```markdown
 # Slide 1
 
 foobar
@@ -31,4 +30,13 @@ foobar
 # Slide 2
 
 foobar
+
+---
+
+# A diagram with Mermaid
+
+```mermaid
+graph LR
+A[Start] --> B{Decision}
+B --> C{Yes} || No --> D{End}
 ```
