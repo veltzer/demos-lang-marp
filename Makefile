@@ -11,6 +11,8 @@ DO_MARP_PDF:=1
 DO_MARP_PPTX:=1
 # do you want to convert marp to HTML?
 DO_MARP_HTML:=1
+# do you want to convert mermaid diagrams into png?
+DO_MERMAID_PNG:=1
 
 ########
 # code #
@@ -37,6 +39,10 @@ MARP_PDF:=$(addprefix out/,$(addsuffix .pdf,$(MARP_BAS)))
 MARP_PPTX:=$(addprefix out/,$(addsuffix .pptx,$(MARP_BAS)))
 MARP_HTML:=$(addprefix out/,$(addsuffix .html,$(MARP_BAS)))
 
+MERMAID_SRC:=$(shell find mermaid -type f -and -name "*.mmd")
+MERMAID_BAS:=$(basename $(MERMAID_SRC))
+MERMAID_PNG:=$(addprefix out/,$(addsuffix .png,$(MERMAID_BAS)))
+
 ifeq ($(DO_MARP_PDF),1)
 ALL+=$(MARP_PDF)
 endif # DO_MARP_PDF
@@ -49,7 +55,11 @@ ifeq ($(DO_MARP_HTML),1)
 ALL+=$(MARP_HTML)
 endif # DO_MARP_HTML
 
-MARK_DEPENDS=marp.config.js
+ifeq ($(DO_MERMAID_PNG),1)
+ALL+=$(MERMAID_PNG)
+endif # DO_MERMAID_PNG
+
+MARP_DEPENDS=marp.config.js
 
 #########
 # rules #
@@ -66,6 +76,9 @@ debug:
 	$(info MARP_PDF is $(MARP_PDF))
 	$(info MARP_PPTX is $(MARP_PPTX))
 	$(info MARP_HTML is $(MARP_HTML))
+	$(info MERMAID_SRC is $(MERMAID_SRC))
+	$(info MERMAID_BAS is $(MERMAID_BAS))
+	$(info MERMAID_PNG is $(MERMAID_PNG))
 
 .PHONY: clean
 clean:
@@ -92,3 +105,7 @@ $(MARP_HTML): out/%.html: %.md $(MARP_DEPENDS)
 	$(info doing [$@])
 	$(Q)mkdir -p $(dir $@)
 	$(Q)pymakehelper only_print_on_error node_modules/.bin/marp --html --output $@ $<
+$(MERMAID_PNG): out/%.png: %.mmd
+	$(info doing [$@])
+	$(Q)mkdir -p $(dir $@)
+	$(Q)pymakehelper only_print_on_error node_modules/.bin/mmdc -i $< -o $@

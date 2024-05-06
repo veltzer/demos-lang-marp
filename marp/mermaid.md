@@ -1,10 +1,7 @@
 ---
 marp: true
-<!-- _class: mermaid -->
 ---
 
-
-<!-- _class: mermaid -->
 # My Presentation
 
 ## With Mermaid Diagrams
