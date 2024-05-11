@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "@marp-team/marp-cli": "latest",
-    "@mermaid-js/mermaid-cli": "latest"
+    "@mermaid-js/mermaid-cli": "latest",
+    "markdown-it-admon": "latest",
+    "markdown-it-mermaid": "latest"
   }
 }
