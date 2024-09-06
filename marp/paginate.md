@@ -1,7 +1,6 @@
 ---
 # This will cause page numbers to appear, you can see the page number in the lower right corner of the slides
 paginate: true
-marp: true
 ---
 # Slide 1
 
