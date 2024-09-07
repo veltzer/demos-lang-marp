@@ -59,7 +59,9 @@ ifeq ($(DO_MERMAID_PNG),1)
 ALL+=$(MERMAID_PNG)
 endif # DO_MERMAID_PNG
 
-MARP_DEPENDS=marp.config.js
+# MARP_DEPENDS=marp.config.js
+MARP_DEPENDS=
+MARP_FLAGS=--engine @marp-team/marp-core --html --allow-local-files --quiet
 
 #########
 # rules #
@@ -96,15 +98,15 @@ clean_hard:
 $(MARP_PDF): out/%.pdf: %.md $(MARP_DEPENDS)
 	$(info doing [$@])
 	$(Q)mkdir -p $(dir $@)
-	$(Q)pymakehelper only_print_on_error node_modules/.bin/marp --pdf --output $@ $<
+	$(Q)pymakehelper only_print_on_error node_modules/.bin/marp $(MARP_FLAGS) --pdf --output $@ $<
 $(MARP_PPTX): out/%.pptx: %.md $(MARP_DEPENDS)
 	$(info doing [$@])
 	$(Q)mkdir -p $(dir $@)
-	$(Q)pymakehelper only_print_on_error node_modules/.bin/marp --quiet --pptx --output $@ $<
+	$(Q)pymakehelper only_print_on_error node_modules/.bin/marp $(MARP_FLAGS) --pptx --output $@ $<
 $(MARP_HTML): out/%.html: %.md $(MARP_DEPENDS)
 	$(info doing [$@])
 	$(Q)mkdir -p $(dir $@)
-	$(Q)pymakehelper only_print_on_error node_modules/.bin/marp --html --output $@ $<
+	$(Q)pymakehelper only_print_on_error node_modules/.bin/marp $(MARP_FLAGS) --html --output $@ $<
 $(MERMAID_PNG): out/%.png: %.mmd
 	$(info doing [$@])
 	$(Q)mkdir -p $(dir $@)
