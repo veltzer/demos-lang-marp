@@ -6,6 +6,7 @@ theme: default
 - have a local url below when you point to the image.
 - you have to have the --allow-local-files if you want to embed local images into this presentation,
     if you don't you will get a warning (I don't know how to turn warnings into erros when using marp).
+    Note that local images ARE NOT embedded into HTML output, only pdf output.
 - if you have a remote image with a wrong link you will not get any warning or error because marp will
     just embed the link into the presentation, so remote images are not REALLY embedded into your pdf.
 - you DO NOT HAVE to have the --engine @marp-team/marp-core flag
