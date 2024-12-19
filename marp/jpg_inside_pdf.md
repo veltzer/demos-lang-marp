@@ -16,8 +16,9 @@ theme: default
 # Slide with local image
 
 This slide contains a JPG image.
+The problem is that we don't see the entire image or the text under the image
 
-![width:100px height:100px](../images/example.jpg)
+![image](../images/example.jpg)
 > This is the description of the image
 
 ---
@@ -26,7 +27,7 @@ This slide contains a JPG image.
 
 This slide contains a JPG image.
 
-![width:100px height:100px](https://veltzer.github.io/assets/raw/cyber/sql-injection.png)
+![he](https://veltzer.github.io/assets/raw/cyber/sql-injection.png)
 > This is the description of the image
 
 ---
@@ -35,4 +36,4 @@ This slide contains a JPG image.
 
 This slide contains a JPG image.
 
-![width:100px height:100px](https://veltzer.github.io/assets/raw/cyber/sql-injection.pn)
+![image](https://veltzer.github.io/assets/raw/cyber/sql-injection.pn)
