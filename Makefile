@@ -102,10 +102,10 @@ $(MARP_HTML): out/%.html: %.md $(MARP_DEPENDS)
 	$(info doing [$@])
 	$(Q)mkdir -p $(dir $@)
 	$(Q)pymakehelper only_print_on_error node_modules/.bin/marp $(MARP_FLAGS) --html --output $@ $<
-$(MERMAID_PNG): out/%.png: %.mmd
+$(MERMAID_PNG): out/%.png: %.mmd .mmdc.config.json
 	$(info doing [$@])
 	$(Q)mkdir -p $(dir $@)
-	$(Q)pymakehelper only_print_on_error node_modules/.bin/mmdc -p .mmdc.config -i $< -o $@
+	$(Q)pymakehelper only_print_on_error node_modules/.bin/mmdc -p .mmdc.config.json -i $< -o $@
 
 ##########
 # alldep #
