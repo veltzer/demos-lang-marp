@@ -3,7 +3,7 @@
     "@marp-team/marp-cli": "latest",
     "@marp-team/marpit": "latest",
     "@mermaid-js/mermaid-cli": "latest",
-    "decktape": "^3.15.0",
+    "decktape": "latest",
     "markdown-it-admon": "latest",
     "markdown-it-mermaid": "latest",
     "puppeteer": "latest"
