@@ -1,3 +1,8 @@
+---
+marp: true
+mermaid: true
+---
+
 # My Presentation
 
 ## With Mermaid Diagrams
