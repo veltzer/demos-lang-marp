@@ -7,6 +7,10 @@ mermaid: true
 
 ## With Mermaid Diagrams
 
+I can't seem to get this demo to work.
+The mermaid: true above is not neccessary.
+The `.marprc.js` file is not neccessary as well.
+
 ```mermaid
 graph TD
     A[Client] -->|TCP Connection| B[Load Balancer]
