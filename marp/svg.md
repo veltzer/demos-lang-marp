@@ -1,6 +1,8 @@
 # SVG Presentation
 
 This presentation is intended to test svg inclusion in marp.
+Note that SVG is handled inlines in marp without the need to actually surround it with
+backticks and the language annotation.
 
 ---
 
