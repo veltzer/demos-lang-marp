@@ -54,9 +54,9 @@ ifeq ($(DO_MERMAID_PNG),1)
 ALL+=$(MERMAID_PNG)
 endif # DO_MERMAID_PNG
 
-# MARP_DEPENDS=marp.config.js
+# MARP_DEPENDS=engine.js
 MARP_DEPENDS=
-MARP_FLAGS=--engine @marp-team/marp-core --html --allow-local-files --quiet
+MARP_FLAGS=--html --allow-local-files --quiet
 
 #########
 # rules #

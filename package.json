@@ -5,7 +5,6 @@
     "@mermaid-js/mermaid-cli": "latest",
     "decktape": "latest",
     "markdown-it-admon": "latest",
-    "markdown-it-mermaid": "latest",
     "puppeteer": "latest"
   }
 }
