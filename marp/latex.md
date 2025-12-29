@@ -29,9 +29,3 @@ Where:
 The quadratic formula:
 
 $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
-
----
-
-## Conclusion
-
-LaTeX can be used to create mathematical expressions in Marp!
