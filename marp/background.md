@@ -14,29 +14,3 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 Markdown Presentation Ecosystem
 
 https://marp.app/
-
----
-
-# How to write slides
-
-Split pages by horizontal ruler (`---`). It's very simple! :satisfied:
-
-# Slide 1
-
-foobar
-
----
-
-# Slide 2
-
-foobar
-
----
-
-# A diagram with Mermaid
-
-```mermaid
-graph LR
-A[Start] --> B{Decision}
-B --> C{Yes} || No --> D{End}
-```
