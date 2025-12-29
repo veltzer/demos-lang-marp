@@ -12,7 +12,7 @@ DO_MARP_PPTX:=1
 # do you want to convert marp to HTML?
 DO_MARP_HTML:=1
 # do you want to convert mermaid diagrams into png?
-DO_MERMAID_PNG:=1
+DO_MERMAID_PNG:=0
 
 ########
 # code #
