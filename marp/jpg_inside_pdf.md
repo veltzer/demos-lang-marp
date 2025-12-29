@@ -20,20 +20,3 @@ The problem is that we don't see the entire image or the text under the image
 
 ![image](../images/example.jpg)
 > This is the description of the image
-
----
-
-# Slide with currect remote image
-
-This slide contains a JPG image.
-
-![he](https://veltzer.github.io/assets/raw/cyber/sql-injection.png)
-> This is the description of the image
-
----
-
-# Slide with wrong remote image
-
-This slide contains a JPG image.
-
-![image](https://veltzer.github.io/assets/raw/cyber/sql-injection.pn)
