@@ -369,6 +369,132 @@ themeSet:
   - ./themes/
 ```
 
+## Text & Typography
+
+### Blockquotes
+
+Render styled quotation blocks.
+
+```markdown
+> This is a blockquote.
+> It can span multiple lines.
+>
+> > And can be nested.
+```
+
+### Horizontal rules within a slide
+
+`---` separates slides, but `***` or `___` render as a horizontal rule within a slide.
+
+```markdown
+# My Slide
+
+Content above the rule.
+
+***
+
+Content below the rule.
+```
+
+### Inline code vs code blocks
+
+Compare inline code styling with fenced code blocks.
+
+```markdown
+Use `inline code` for short references.
+
+​```javascript
+// Fenced code blocks for longer snippets
+function hello() {
+  console.log("world");
+}
+​```
+```
+
+### Links and autolinks
+
+Clickable URLs and Markdown links.
+
+```markdown
+# Links
+
+- Autolink: <https://marp.app>
+- Markdown link: [Marp Homepage](https://marp.app)
+- Link with title: [Marp](https://marp.app "The official Marp website")
+```
+
+### Strikethrough
+
+Deleted text rendering.
+
+```markdown
+This is ~~deleted text~~ with strikethrough.
+```
+
+### Emoji
+
+Emoji rendering in slides (GitHub-style shortcodes or Unicode).
+
+```markdown
+# Emoji Support
+
+- Shortcode: :smile: :rocket: :tada:
+- Unicode: 😄 🚀 🎉
+```
+
+### Footnotes
+
+Reference-style footnotes (support depends on Markdown-it plugins).
+
+```markdown
+This claim needs a source[^1].
+
+[^1]: Source: The Marp Documentation.
+```
+
+## Advanced Features (continued)
+
+### Fragmented lists (incremental reveal)
+
+Simulate incremental reveal using HTML and CSS animations (requires `--html` flag).
+
+```markdown
+<style>
+  .reveal li { opacity: 0; animation: fadeIn 0.5s forwards; }
+  .reveal li:nth-child(1) { animation-delay: 0.5s; }
+  .reveal li:nth-child(2) { animation-delay: 1.0s; }
+  .reveal li:nth-child(3) { animation-delay: 1.5s; }
+  @keyframes fadeIn { to { opacity: 1; } }
+</style>
+
+<ul class="reveal">
+  <li>First point</li>
+  <li>Second point</li>
+  <li>Third point</li>
+</ul>
+```
+
+### Raw HTML (iframes, custom elements)
+
+Embed external content using iframes (requires `--html` flag).
+
+```markdown
+<iframe src="https://example.com" width="100%" height="400"></iframe>
+```
+
+### `.marprc.yml` configuration
+
+Project-level config for default CLI options, theme paths, and more.
+
+```yaml
+html: true
+theme: gaia
+pdf: true
+allowLocalFiles: true
+themeSet:
+  - ./themes/
+```
+
 ## Feature Coverage in This Repo
 
 Demos that already exist:
@@ -376,22 +502,31 @@ Demos that already exist:
 | Feature | File |
 |---------|------|
 | Background images | `marp/background.md` |
+| Bullet lists | `marp/list_bullet.md` |
 | Charts | `marp/chart.md` |
 | Code highlighting | `marp/code_highlighting.md` |
 | Comments | `marp/comments.md` |
+| Definition-style lists | `marp/list_definition.md` |
 | Footer | `marp/footer.md` |
 | Header | `marp/header.md` |
 | JPG inside PDF | `marp/jpg_inside_pdf.md` |
 | JPG scaled | `marp/jpg_scaled_correct.md` |
 | LaTeX | `marp/latex.md` |
+| List columns (two-column) | `marp/list_columns.md` |
 | Marp directive | `marp/marp_equals_true.md` |
 | Math | `marp/math.md` |
 | MathJax | `marp/mathjax.md` |
-| Mermaid diagrams | `marp/mermaid.md` |
-| Numbered lists | `marp/numbered_list.md` |
+| Mermaid diagrams (inline) | `marp/mermaid.md` |
+| Mermaid diagrams (external) | `marp/mermaid_external.md` |
+| Mixed lists | `marp/list_mixed.md` |
+| Multi-line list items | `marp/list_multiline.md` |
+| Numbered lists | `marp/list_numbered.md` |
+| Numbered lists (custom start) | `marp/list_starting_number.md` |
 | Pagination | `marp/paginate.md` |
-| SVG | `marp/svg.md` |
+| SVG (inline) | `marp/svg.md` |
+| SVG (external file) | `marp/svg_external.md` |
 | Tables | `marp/tables.md` |
+| Task lists (checkboxes) | `marp/list_task.md` |
 | Theme: Gaia | `marp/theme_gaia.md` |
 
 Features not yet demonstrated:
@@ -399,7 +534,7 @@ Features not yet demonstrated:
 - Per-slide class directives (`lead`, `invert`)
 - Scoped vs global directives
 - Auto-fit text (`<!-- fit -->`)
-- Multi-column layouts
+- Multi-column layouts (general content, not just lists)
 - Theme: uncover
 - Custom CSS themes
 - Color/background directives
@@ -409,9 +544,18 @@ Features not yet demonstrated:
 - Image sizing (`w:`, `h:`)
 - Image filters (`blur`, `sepia`, `grayscale`, etc.)
 - Video embedding
+- Blockquotes
+- Horizontal rules within a slide (`***`, `___`)
+- Inline code vs code blocks comparison
+- Links and autolinks
+- Strikethrough
+- Emoji rendering
+- Footnotes
 - Speaker notes
 - Slide transitions
 - Auto-scaling
+- Fragmented lists (incremental reveal)
+- Raw HTML (iframes, custom elements)
 - PDF metadata directives
 - PowerPoint export
 - `.marprc.yml` configuration
