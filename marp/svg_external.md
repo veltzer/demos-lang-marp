@@ -15,12 +15,12 @@ using standard Markdown image syntax.
 
 ---
 
-# SVG from External File (absolute path)
+# SVG from External File (absolute path) - DOES NOT WORK
 
 ![SVG Diagram](images/diagram.svg)
 
 ---
 
-# SVG from External File (absolute path with slash)
+# SVG from External File (absolute path with slash) - DOES NOT WORK
 
 ![SVG Diagram](/images/diagram.svg)
