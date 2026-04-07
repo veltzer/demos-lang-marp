@@ -9,6 +9,18 @@ using standard Markdown image syntax.
 
 ---
 
-# SVG from External File
+# SVG from External File (relative path)
 
 ![SVG Diagram](../images/diagram.svg)
+
+---
+
+# SVG from External File (absolute path)
+
+![SVG Diagram](images/diagram.svg)
+
+---
+
+# SVG from External File (absolute path with slash)
+
+![SVG Diagram](/images/diagram.svg)
