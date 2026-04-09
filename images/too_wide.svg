@@ -1,0 +1,12 @@
+<svg viewBox="0 0 2000 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="2000" height="200" fill="#e8f4fd" stroke="#2196F3" stroke-width="2"/>
+  <line x1="0" y1="100" x2="2000" y2="100" stroke="#90CAF9" stroke-width="1" stroke-dasharray="10,5"/>
+  <circle cx="100" cy="100" r="40" fill="#F44336"/>
+  <circle cx="500" cy="100" r="40" fill="#FF9800"/>
+  <circle cx="1000" cy="100" r="40" fill="#4CAF50"/>
+  <circle cx="1500" cy="100" r="40" fill="#2196F3"/>
+  <circle cx="1900" cy="100" r="40" fill="#9C27B0"/>
+  <text x="100" y="170" text-anchor="middle" font-family="Arial" font-size="14">Start</text>
+  <text x="1000" y="170" text-anchor="middle" font-family="Arial" font-size="14">Middle</text>
+  <text x="1900" y="170" text-anchor="middle" font-family="Arial" font-size="14">End</text>
+</svg>
