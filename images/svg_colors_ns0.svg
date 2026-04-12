@@ -1,0 +1,38 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <defs>
+    <style>
+      :root, svg {
+        --bg: #ffffff;
+        --primary: #1e88e5;
+        --primary-dk: #1565c0;
+        --ok: #43a047;
+        --danger: #e53935;
+      }
+    </style>
+    <linearGradient id="grad-primary" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e88e5"/>
+      <stop offset="100%" stop-color="#1565c0"/>
+    </linearGradient>
+  </defs>
+
+  <ns0:text x="40" y="40" font-size="20" font-weight="bold">ns0: prefix test — var() colors</ns0:text>
+
+  <ns0:rect x="40" y="60" width="200" height="80" rx="10" fill="var(--primary)" stroke="var(--primary-dk)" stroke-width="3" />
+  <ns0:text x="140" y="108" text-anchor="middle" font-size="16" fill="var(--bg)" font-weight="bold">var(--primary)</ns0:text>
+
+  <ns0:rect x="280" y="60" width="200" height="80" rx="10" fill="var(--ok)" stroke="var(--primary-dk)" stroke-width="3" />
+  <ns0:text x="380" y="108" text-anchor="middle" font-size="16" fill="var(--bg)" font-weight="bold">var(--ok)</ns0:text>
+
+  <ns0:rect x="520" y="60" width="200" height="80" rx="10" fill="var(--danger)" stroke="var(--primary-dk)" stroke-width="3" />
+  <ns0:text x="620" y="108" text-anchor="middle" font-size="16" fill="var(--bg)" font-weight="bold">var(--danger)</ns0:text>
+
+  <ns0:text x="40" y="200" font-size="20" font-weight="bold">ns0: prefix — gradient + var()</ns0:text>
+
+  <ns0:rect x="40" y="220" width="200" height="80" rx="10" fill="url(#grad-primary)" stroke="var(--primary-dk)" stroke-width="3" />
+  <ns0:text x="140" y="268" text-anchor="middle" font-size="16" fill="var(--bg)" font-weight="bold">grad + var</ns0:text>
+
+  <ns0:text x="40" y="360" font-size="20" font-weight="bold">ns0: prefix — raw hex (control)</ns0:text>
+
+  <ns0:rect x="40" y="380" width="200" height="80" rx="10" fill="#1e88e5" stroke="#1565c0" stroke-width="3" />
+  <ns0:text x="140" y="428" text-anchor="middle" font-size="16" fill="#ffffff" font-weight="bold">raw hex</ns0:text>
+</ns0:svg>
