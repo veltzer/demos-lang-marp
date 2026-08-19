@@ -24,7 +24,7 @@ Marp warns on stderr but still exits 0.
 
 ---
 
-# Bogus SVG Reference (present but invalid content)
+## Bogus SVG Reference (present but invalid content)
 
 Marp gives no warning at all. Silently renders nothing.
 
@@ -32,7 +32,7 @@ Marp gives no warning at all. Silently renders nothing.
 
 ---
 
-# Bogus SVG Reference (present but tiny icon)
+## Bogus SVG Reference (present but tiny icon)
 
 Marp gives no warning. Renders the tiny icon without complaint.
 

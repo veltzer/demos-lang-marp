@@ -12,6 +12,7 @@ marp: true
   This is still part of the second item.
 
 - Third item followed by a code snippet:
+
   ```python
   print("hello from a list item")
   ```

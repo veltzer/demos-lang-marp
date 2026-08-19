@@ -7,7 +7,8 @@ marp: true
 <div style="display: flex; gap: 4em;">
 <div>
 
-### Pros
+## Pros
+
 - Fast rendering
 - Markdown based
 - Easy to version control
@@ -17,6 +18,7 @@ marp: true
 <div>
 
 ### Cons
+
 - Limited animations
 - No real-time collaboration
 - Learning curve for theming

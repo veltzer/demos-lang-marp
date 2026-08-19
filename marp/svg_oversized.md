@@ -31,19 +31,19 @@ wide or extremely tall?
 
 ---
 
-# Too-Wide SVG (external file, 10:1 aspect ratio)
+## Too-Wide SVG (external file, 10:1 aspect ratio)
 
 ![too wide](images/too_wide.svg)
 
 ---
 
-# Too-Tall SVG (external file, 1:10 aspect ratio)
+## Too-Tall SVG (external file, 1:10 aspect ratio)
 
 ![too tall](images/too_tall.svg)
 
 ---
 
-# Too-Wide SVG (inline, 10:1 aspect ratio)
+## Too-Wide SVG (inline, 10:1 aspect ratio)
 
 <svg viewBox="0 0 2000 200" xmlns="http://www.w3.org/2000/svg">
   <rect width="2000" height="200" fill="#e8f4fd" stroke="#2196F3" stroke-width="2"/>
@@ -60,7 +60,7 @@ wide or extremely tall?
 
 ---
 
-# Too-Tall SVG (inline, 1:10 aspect ratio)
+## Too-Tall SVG (inline, 1:10 aspect ratio)
 
 <svg viewBox="0 0 200 2000" xmlns="http://www.w3.org/2000/svg">
   <rect width="200" height="2000" fill="#fce4ec" stroke="#E91E63" stroke-width="2"/>
@@ -77,7 +77,7 @@ wide or extremely tall?
 
 ---
 
-# Too-Wide SVG with explicit width/height attributes
+## Too-Wide SVG with explicit width/height attributes
 
 <svg viewBox="0 0 2000 200" xmlns="http://www.w3.org/2000/svg" width="2000" height="200">
   <rect width="2000" height="200" fill="#e8f4fd" stroke="#2196F3" stroke-width="2"/>
@@ -88,7 +88,7 @@ wide or extremely tall?
 
 ---
 
-# Too-Tall SVG with explicit width/height attributes
+## Too-Tall SVG with explicit width/height attributes
 
 <svg viewBox="0 0 200 2000" xmlns="http://www.w3.org/2000/svg" width="200" height="2000">
   <rect width="200" height="2000" fill="#fce4ec" stroke="#E91E63" stroke-width="2"/>

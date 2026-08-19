@@ -13,7 +13,7 @@ subsequent items auto-increment regardless of what you type.
 
 ---
 
-# Multiple Lists with Different Starts
+## Multiple Lists with Different Starts
 
 1. Normal list starting at 1
 1. Item 2

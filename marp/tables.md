@@ -15,7 +15,7 @@ marp: true
 
 ---
 
-# Column Alignment
+## Column Alignment
 
 | Left-aligned | Centered   | Right-aligned |
 |:-------------|:----------:|--------------:|
@@ -25,7 +25,7 @@ marp: true
 
 ---
 
-# Table with Emphasis
+## Table with Emphasis
 
 | Feature        | Supported |
 |----------------|-----------|

@@ -13,7 +13,7 @@ Apply built-in CSS classes to individual slides to change their layout or appear
 # Centered Title Slide
 
 <!-- _class: invert -->
-# Dark Mode Slide
+## Dark Mode Slide
 ```
 
 ### Scoped vs global directives
@@ -30,14 +30,15 @@ backgroundColor: #fff
 # Slide 1 (white background)
 
 ---
+
 <!-- _backgroundColor: #000 -->
 <!-- _color: #fff -->
 
-# Slide 2 (black background, only this slide)
+## Slide 2 (black background, only this slide)
 
 ---
 
-# Slide 3 (back to white)
+## Slide 3 (back to white)
 ```
 
 ### Auto-fit text
@@ -57,6 +58,7 @@ Use raw HTML with inline CSS (requires `--html` flag).
 <div>
 
 ## Left Column
+
 - Item A
 - Item B
 
@@ -64,6 +66,7 @@ Use raw HTML with inline CSS (requires `--html` flag).
 <div>
 
 ## Right Column
+
 - Item C
 - Item D
 
@@ -122,10 +125,11 @@ backgroundColor: #f5f5f5
 # Global styling
 
 ---
+
 <!-- _color: white -->
 <!-- _backgroundColor: #2d2d2d -->
 
-# Dark slide
+## Dark slide
 ```
 
 ### Background images
@@ -141,25 +145,25 @@ Use the `bg` keyword in image alt text to set slide backgrounds.
 
 ![bg left](photo.jpg)
 
-# Split layout: image left, text right
+## Split layout: image left, text right
 
 ---
 
 ![bg right:40%](photo.jpg)
 
-# Split layout with custom ratio
+## Split layout with custom ratio
 
 ---
 
 ![bg contain](diagram.png)
 
-# Contained background (no cropping)
+## Contained background (no cropping)
 
 ---
 
 ![bg cover](photo.jpg)
 
-# Cover background (fills slide, may crop)
+## Cover background (fills slide, may crop)
 ```
 
 ### Multiple backgrounds
@@ -250,14 +254,16 @@ transition: fade
 # Slide 1
 
 ---
+
 <!-- transition: slide -->
 
-# Slide 2 (slides in)
+## Slide 2 (slides in)
 
 ---
+
 <!-- transition: cover -->
 
-# Slide 3 (covers previous)
+## Slide 3 (covers previous)
 ```
 
 Available transitions: `fade`, `slide`, `cover`, `reveal`, `wipe`, `flip`, `morph`, and more.
@@ -292,6 +298,7 @@ marp: true
 def very_long_function_name_that_might_overflow(parameter_one, parameter_two, parameter_three):
     return parameter_one + parameter_two + parameter_three
 ```​
+```
 ```
 
 ## Output & Tooling

@@ -2,6 +2,7 @@
 marp: true
 theme: default
 ---
+
 <!-- If you want the image to be embedded into the pdf document you need to:
 - have a local url below when you point to the image.
 - you have to have the --allow-local-files if you want to embed local images into this presentation,

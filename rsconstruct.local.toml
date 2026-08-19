@@ -1,0 +1,16 @@
+# Repo-specific overlay. Deep-merged over the canonical rsconstruct.toml.
+
+[processor.tera]
+src_dirs = ["tera.templates"]
+
+# check_md runs the content-integrity checks only. These are marp *feature*
+# demos: several deliberately show what the house-style checks forbid --
+# external image URLs (background.md), inline <svg> (svg_internal.md), broken
+# refs (svg_bogus.md), non-1. numbering (list_numbered.md), wide tables
+# (tables_overflow.md), broken image refs (svg_bogus.md), SVG slides with captions. Running --urls/--svg-content/
+# --inline-svg/--numbering/--table-width/--title-* here would flag the demos
+# themselves. --fences/--whitespace/--links/--labels/--images still catch real
+# breakage. (mermaid was added to text_labels.yaml as a valid fence label.)
+[processor.script.check_md]
+command = "scripts/check_md.py"
+args = ["--fences", "--whitespace", "--links", "--labels"]

@@ -18,7 +18,7 @@ using bold terms and indented descriptions.
 
 ---
 
-# Alternative: Bold + Bullet Style
+## Alternative: Bold + Bullet Style
 
 - **Marp** — A Markdown-based presentation tool
 - **Marpit** — The framework underlying Marp's slide rendering

@@ -1,0 +1,9 @@
+# These are Marp slide decks, not prose. Several rules fight the format:
+# MD041 (first line must be a heading) -- every deck starts with the marp
+# frontmatter `---`; MD033 (no inline HTML) -- slides use <!-- --> directives,
+# <div>/<svg> layout, and HTML is a demonstrated feature here; MD057 (relative
+# link exists) -- svg_bogus.md demos a deliberately broken reference; MD029
+# (ordered-list prefix) -- list_numbered.md demos real numbering; MD013 (line
+# length) -- slide source lines are not wrapped. The remaining rules still run.
+[global]
+disable = ["MD013", "MD029", "MD033", "MD041", "MD057"]

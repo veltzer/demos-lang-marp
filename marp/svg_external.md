@@ -9,13 +9,13 @@ using standard Markdown image syntax.
 
 ---
 
-# SVG from External File (relative path)
+## SVG from External File (relative path)
 
 ![SVG Diagram](../images/diagram.svg)
 
 ---
 
-# SVG from External File (project-root-relative path)
+## SVG from External File (project-root-relative path)
 
 <!-- This works because .marprc.mjs sets baseUrl to the project root -->
 
@@ -23,7 +23,7 @@ using standard Markdown image syntax.
 
 ---
 
-# SVG from External File (absolute path with slash) - DOES NOT WORK
+## SVG from External File (absolute path with slash) - DOES NOT WORK
 
 <!-- Leading / resolves to filesystem root, not project root -->
 

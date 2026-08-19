@@ -17,7 +17,7 @@ Rightmost columns disappear off the slide edge.
 
 ---
 
-# No Overflow: Wide Cell Content
+## No Overflow: Wide Cell Content
 
 | Name | Description |
 |------|-------------|
@@ -28,7 +28,7 @@ Long prose wraps within the cell — no overflow.
 
 ---
 
-# Table Overflow: Long Unbreakable Tokens
+## Table Overflow: Long Unbreakable Tokens
 
 | Identifier                                                                     | Value |
 |--------------------------------------------------------------------------------|-------|
@@ -39,7 +39,7 @@ Inline-code tokens do not wrap and push the table off the slide.
 
 ---
 
-# Why Marp Does Not Catch This
+## Why Marp Does Not Catch This
 
 - Marp renders to PDF via headless Chromium + CSS
 - Overflow is a CSS layout outcome, not a markdown-syntax error
