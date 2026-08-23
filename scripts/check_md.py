@@ -31,7 +31,7 @@ import argparse
 import os
 import re
 import sys
-from collections.abc import Iterator
+from collections.abc import Callable, Iterator
 from pathlib import Path
 
 import yaml
@@ -82,7 +82,7 @@ _VALID_LABELS = _load_labels()
 
 # ── Per-check functions (accept pre-loaded text/lines) ──
 
-def _check_links(path: Path, text: str, text_no_code: str, lines: list[str]) -> list[str]:
+def _check_links(path: Path, _text: str, text_no_code: str, _lines: list[str]) -> list[str]:
     errors = []
     for m in _LINK_RE.finditer(text_no_code):
         link_text, link = m.groups()
@@ -106,7 +106,7 @@ def _iter_labels(text: str) -> Iterator[tuple[str, int]]:
         yield m.group(1), line_no
 
 
-def _check_labels(path: Path, text: str, text_no_code: str, lines: list[str]) -> list[str]:
+def _check_labels(path: Path, text: str, _text_no_code: str, _lines: list[str]) -> list[str]:
     errors = []
     for label, line_no in _iter_labels(text):
         if label not in _VALID_LABELS:
@@ -114,14 +114,14 @@ def _check_labels(path: Path, text: str, text_no_code: str, lines: list[str]) ->
     return errors
 
 
-def _check_fences(path: Path, text: str, text_no_code: str, lines: list[str]) -> list[str]:
+def _check_fences(path: Path, text: str, _text_no_code: str, _lines: list[str]) -> list[str]:
     fence_count = len(_FENCE_LINE_RE.findall(text))
     if fence_count % 2 != 0:
         return [f"{path}: unclosed code fence ({fence_count} fence lines, expected even)"]
     return []
 
 
-def _check_urls(path: Path, text: str, text_no_code: str, lines: list[str]) -> list[str]:
+def _check_urls(path: Path, _text: str, text_no_code: str, _lines: list[str]) -> list[str]:
     errors = []
     for line_no, line in enumerate(text_no_code.splitlines(), 1):
         for m in _IMAGE_RE.finditer(line):
@@ -131,7 +131,7 @@ def _check_urls(path: Path, text: str, text_no_code: str, lines: list[str]) -> l
     return errors
 
 
-def _check_whitespace(path: Path, text: str, text_no_code: str, lines: list[str]) -> list[str]:
+def _check_whitespace(path: Path, _text: str, _text_no_code: str, lines: list[str]) -> list[str]:
     errors = []
     prev_blank = False
     for line_no, line in enumerate(lines, 1):
@@ -144,7 +144,7 @@ def _check_whitespace(path: Path, text: str, text_no_code: str, lines: list[str]
     return errors
 
 
-def _check_slides(path: Path, text: str, text_no_code: str, lines: list[str]) -> list[str]:
+def _check_slides(path: Path, _text: str, _text_no_code: str, lines: list[str]) -> list[str]:
     errors = []
     last_separator = None
     only_blanks = True
@@ -188,7 +188,7 @@ def _split_slides(lines: list[str]) -> list[tuple[int, list[str]]]:
     return slides
 
 
-def _check_dead_slides(path: Path, text: str, text_no_code: str, lines: list[str]) -> list[str]:
+def _check_dead_slides(path: Path, _text: str, _text_no_code: str, lines: list[str]) -> list[str]:
     """Flag `## `-titled slides with no body content (heading only).
 
     Skips:
@@ -242,7 +242,7 @@ def _check_dead_slides(path: Path, text: str, text_no_code: str, lines: list[str
     return errors
 
 
-def _check_images(path: Path, text: str, text_no_code: str, lines: list[str]) -> list[str]:
+def _check_images(path: Path, _text: str, text_no_code: str, _lines: list[str]) -> list[str]:
     errors = []
     for line_no, line in enumerate(text_no_code.splitlines(), 1):
         for m in _IMAGE_RE.finditer(line):
@@ -260,7 +260,7 @@ def _check_images(path: Path, text: str, text_no_code: str, lines: list[str]) ->
     return errors
 
 
-def _check_numbering(path: Path, text: str, text_no_code: str, lines: list[str]) -> list[str]:
+def _check_numbering(path: Path, _text: str, _text_no_code: str, lines: list[str]) -> list[str]:
     errors = []
     in_code = False
     for line_no, line in enumerate(lines, 1):
@@ -273,7 +273,7 @@ def _check_numbering(path: Path, text: str, text_no_code: str, lines: list[str])
     return errors
 
 
-def _check_slide_length(path: Path, text: str, text_no_code: str, lines: list[str]) -> list[str]:
+def _check_slide_length(path: Path, _text: str, _text_no_code: str, lines: list[str]) -> list[str]:
     """Flag slides with more than MAX_SLIDE_LINES non-blank body lines.
 
     Body excludes blank lines and heading lines (#..). Code-fence content counts
@@ -310,7 +310,7 @@ def _check_slide_length(path: Path, text: str, text_no_code: str, lines: list[st
     return errors
 
 
-def _check_table_width(path: Path, text: str, text_no_code: str, lines: list[str]) -> list[str]:
+def _check_table_width(path: Path, _text: str, _text_no_code: str, lines: list[str]) -> list[str]:
     """Flag markdown tables whose header row has more than MAX_TABLE_COLUMNS columns."""
     errors: list[str] = []
     in_code = False
@@ -342,7 +342,7 @@ def _check_table_width(path: Path, text: str, text_no_code: str, lines: list[str
     return errors
 
 
-def _check_svg_content(path: Path, text: str, text_no_code: str, lines: list[str]) -> list[str]:
+def _check_svg_content(path: Path, text: str, _text_no_code: str, _lines: list[str]) -> list[str]:
     errors = []
     raw_slides = re.split(r'\n---\n', text)
     line_cursor = 1
@@ -378,7 +378,7 @@ _INLINE_SVG_RE = re.compile(r'<svg\b[^>]*>', re.IGNORECASE)
 _FENCE_OPEN_RE = re.compile(r'^[ \t]{0,3}```')
 
 
-def _check_inline_svg(path: Path, text: str, text_no_code: str, lines: list[str]) -> list[str]:
+def _check_inline_svg(path: Path, _text: str, _text_no_code: str, lines: list[str]) -> list[str]:
     """Flag inline <svg>…</svg> blocks in markdown that sit OUTSIDE fenced
     code blocks. Fenced examples (e.g. XSS payloads in a ```html block) are
     legitimate teaching content and are skipped.
@@ -401,7 +401,7 @@ def _check_inline_svg(path: Path, text: str, text_no_code: str, lines: list[str]
     return errors
 
 
-def _check_title_count(path: Path, text: str, text_no_code: str, lines: list[str]) -> list[str]:
+def _check_title_count(path: Path, _text: str, text_no_code: str, _lines: list[str]) -> list[str]:
     """Enforce "one title per unit":
       - Every course must have exactly one 00_title.md.
       - Every course 00_title.md must contain exactly one `# Title` H1.
@@ -456,7 +456,7 @@ def _check_title_count(path: Path, text: str, text_no_code: str, lines: list[str
     return errors
 
 
-def _check_title_svg(path: Path, text: str, text_no_code: str, lines: list[str]) -> list[str]:
+def _check_title_svg(path: Path, text: str, _text_no_code: str, _lines: list[str]) -> list[str]:
     """Check that every course/lecture has a title.svg AND that the markdown references it.
 
     Courses: marp/courses/DOMAIN/COURSE/00_title.md -> svg/courses/DOMAIN/COURSE/title.svg
@@ -558,7 +558,7 @@ def main() -> None:  # pylint: disable=too-many-statements
              args.svg_content, args.inline_svg, args.title_svg,
              args.title_count, args.table_width, args.slide_length]
     explicit = any(flags)
-    checks = []
+    checks: list[Callable[[Path, str, str, list[str]], list[str]]] = []
     if args.links or not explicit:
         checks.append(_check_links)
     if args.labels or not explicit:
