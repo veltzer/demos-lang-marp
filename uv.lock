@@ -94,7 +94,6 @@ version = "0.0.0"
 source = { virtual = "." }
 dependencies = [
     { name = "pyyaml" },
-    { name = "types-pyyaml" },
 ]
 
 [package.dev-dependencies]
@@ -103,13 +102,11 @@ dev = [
     { name = "pylint" },
     { name = "pytest" },
     { name = "ruff" },
+    { name = "types-pyyaml" },
 ]
 
 [package.metadata]
-requires-dist = [
-    { name = "pyyaml" },
-    { name = "types-pyyaml" },
-]
+requires-dist = [{ name = "pyyaml" }]
 
 [package.metadata.requires-dev]
 dev = [
@@ -117,6 +114,7 @@ dev = [
     { name = "pylint" },
     { name = "pytest" },
     { name = "ruff" },
+    { name = "types-pyyaml" },
 ]
 
 [[package]]
