@@ -1,5 +1,4 @@
-# rsconstruct configuration for this repository — shared defaults plus
-# repo-specific config (merged from the former rsconstruct.local.toml).
+# rsconstruct build configuration for this repository.
 
 # ─── analyzers ───────────────────────────────────────────────────────────────
 
@@ -67,7 +66,7 @@ src_dirs = ["marp"]
 batch = true
 args = ["--fences", "--whitespace", "--links", "--labels"]
 
-# ─── merged from rsconstruct.local.toml ─────────────────────────────────────
+# ─── repo-specific configuration ────────────────────────────────────────────
 
 # lint the GitHub Actions workflow files with actionlint
 [processor.actionlint]
