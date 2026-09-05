@@ -1,9 +1,12 @@
-# These are Marp slide decks, not prose. Several rules fight the format:
-# MD041 (first line must be a heading) -- every deck starts with the marp
-# frontmatter `---`; MD033 (no inline HTML) -- slides use <!-- --> directives,
-# <div>/<svg> layout, and HTML is a demonstrated feature here; MD057 (relative
-# link exists) -- svg_bogus.md demos a deliberately broken reference; MD029
-# (ordered-list prefix) -- list_numbered.md demos real numbering; MD013 (line
-# length) -- slide source lines are not wrapped. The remaining rules still run.
+# Markdown lint rules, shared fleet-wide (rsmultigit check-same). Carried
+# over from the pydmt-era .markdownlint.json / .mdl.style.rb configs the
+# repos were maintained against: rules those never addressed stay on.
+
 [global]
-disable = ["MD013", "MD029", "MD033", "MD041", "MD057"]
+disable = ["MD022", "MD024", "MD026", "MD031", "MD032", "MD033", "MD034"]
+
+[MD007]
+indent = 4
+
+[MD013]
+line_length = 1000

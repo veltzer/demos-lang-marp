@@ -28,7 +28,7 @@ Marp warns on stderr but still exits 0.
 
 Marp gives no warning at all. Silently renders nothing.
 
-![bogus](images/bogus.svg)
+![bogus](images/bogus.notsvg)
 
 ---
 

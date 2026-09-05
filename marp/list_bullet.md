@@ -7,7 +7,7 @@ marp: true
 - First item
 - Second item
 - Third item
-  - Sub-item one
-  - Sub-item two
-    - Deep nested item
+    - Sub-item one
+    - Sub-item two
+        - Deep nested item
 - Fourth item

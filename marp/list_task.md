@@ -8,5 +8,5 @@ marp: true
 - [x] Another completed task
 - [ ] Incomplete task
 - [ ] Another incomplete task
-  - [x] Completed subtask
-  - [ ] Incomplete subtask
+    - [x] Completed subtask
+    - [ ] Incomplete subtask

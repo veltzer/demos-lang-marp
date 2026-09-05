@@ -1,0 +1,17 @@
+# Markdown lint rules for Marp / Slidev slide decks (rsmultigit check-same,
+# shared across the slide repos). These files are slide source, not prose, and
+# several rules fight the format:
+#   MD041 - a deck opens with `---` YAML frontmatter, not a heading
+#   MD029 - decks demonstrate ordered lists that start at a chosen number
+#   MD057 - SVG/asset demos reference generated or deliberately-bogus paths
+#   MD013 - slide source lines are not wrapped
+# It is otherwise the prose .rumdl.toml. Every rule not listed here still runs.
+
+[global]
+disable = ["MD022", "MD024", "MD026", "MD029", "MD031", "MD032", "MD033", "MD034", "MD041", "MD057"]
+
+[MD007]
+indent = 4
+
+[MD013]
+line_length = 1000

@@ -24,8 +24,16 @@ src_dirs = ["tera.templates"]
 
 # ─── markdown ────────────────────────────────────────────────────────────────
 
-[processor.rumdl]
+[processor.rumdl.prose]
+src_dirs = ["doc"]
+src_files = ["README.md"]
+src_exclude_dirs = ["marp"]
+
+# the slide decks are linted with the slide-dialect config (.rumdl.marp.toml),
+# which turns off the rules the Marp format inherently violates.
+[processor.rumdl.slides]
 src_dirs = ["marp"]
+args = ["--config", ".rumdl.marp.toml"]
 
 [processor.zspell]
 src_dirs = ["marp"]
@@ -45,7 +53,6 @@ src_dirs = ["scripts", "config"]
 
 [processor.shellcheck]
 src_dirs = ["scripts", "config"]
-args = ["--severity=error", "--shell=bash"]
 
 # ─── lua ─────────────────────────────────────────────────────────────────────
 
@@ -69,3 +76,24 @@ args = ["--fences", "--whitespace", "--links", "--labels"]
 # lint the GitHub Actions workflow files with actionlint
 [processor.actionlint]
 src_dirs = [".github/workflows"]
+
+# ─── yaml ────────────────────────────────────────────────────────────────────
+
+[processor.yamllint]
+src_files = ["text_labels.yaml"]
+
+# ─── json ────────────────────────────────────────────────────────────────────
+
+[processor.ijsonlint]
+src_files = [".mmdc.config.json", "package.json"]
+
+# ─── xml / svg ───────────────────────────────────────────────────────────────
+
+[processor.xmllint]
+src_dirs = ["images"]
+
+# ─── javascript ──────────────────────────────────────────────────────────────
+
+[processor.eslint]
+src_files = [".marprc.mjs"]
+args = ["-c", ".eslint.config.js"]

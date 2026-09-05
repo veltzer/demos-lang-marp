@@ -297,8 +297,6 @@ marp: true
 # This long code block will be scaled down to fit the slide
 def very_long_function_name_that_might_overflow(parameter_one, parameter_two, parameter_three):
     return parameter_one + parameter_two + parameter_three
-```​
-```
 ```
 
 ## Output & Tooling
