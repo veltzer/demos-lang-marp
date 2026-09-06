@@ -8,7 +8,7 @@
 # It is otherwise the prose .rumdl.toml. Every rule not listed here still runs.
 
 [global]
-disable = ["MD022", "MD024", "MD026", "MD029", "MD031", "MD032", "MD033", "MD034", "MD041", "MD057"]
+disable = ["MD014", "MD022", "MD024", "MD026", "MD029", "MD031", "MD032", "MD033", "MD034", "MD041", "MD057"]
 
 [MD007]
 indent = 4
