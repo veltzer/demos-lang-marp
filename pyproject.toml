@@ -15,6 +15,7 @@ dev = [
     "pytest",
     "ruff",
     "types-PyYAML",
+    "yamllint",
 ]
 
 [tool.uv]
