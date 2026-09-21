@@ -47,8 +47,6 @@ src_dirs = ["marp"]
 [processor.ruff]
 src_dirs = ["scripts", "config"]
 
-[processor.pylint]
-src_dirs = ["scripts", "config"]
 
 [processor.mypy]
 src_dirs = ["scripts", "config"]
