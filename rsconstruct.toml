@@ -96,6 +96,6 @@ src_dirs = ["images"]
 
 # ─── javascript ──────────────────────────────────────────────────────────────
 
-[processor.eslint]
+[processor.oxlint]
 src_files = [".marprc.mjs"]
-args = ["-c", ".eslint.config.js"]
+args = ["-c", ".oxlintrc.json"]
