@@ -18,7 +18,7 @@ reject_dot_src_dirs = true
 # listed here must exist: rsconstruct rejects a missing one at config load.
 # Repos still on config/*.py keep a dep_inputs override in their local
 # overlay until converted.
-[processor.tera]
+[processor.generator.tera]
 dep_auto = [
 	"config/project.lua",
 	"config/personal.lua",
@@ -28,45 +28,45 @@ src_dirs = ["tera.templates"]
 
 # ─── markdown ────────────────────────────────────────────────────────────────
 
-[processor.rumdl.prose]
+[processor.checker.rumdl.prose]
 src_dirs = ["doc"]
 src_files = ["README.md"]
 src_exclude_dirs = ["marp"]
 
 # the slide decks are linted with the slide-dialect config (.rumdl.marp.toml),
 # which turns off the rules the Marp format inherently violates.
-[processor.rumdl.slides]
+[processor.checker.rumdl.slides]
 src_dirs = ["marp"]
 args = ["--config", ".rumdl.marp.toml"]
 
-[processor.zspell]
+[processor.checker.zspell]
 src_dirs = ["marp"]
 
 # ─── python ──────────────────────────────────────────────────────────────────
 
-[processor.ruff]
+[processor.checker.ruff]
 src_dirs = ["scripts", "config"]
 
 
-[processor.mypy]
+[processor.checker.mypy]
 src_dirs = ["scripts", "config"]
 
 # ─── shell ───────────────────────────────────────────────────────────────────
 
-[processor.shellcheck]
+[processor.checker.shellcheck]
 src_dirs = ["scripts", "config"]
 
 # ─── lua ─────────────────────────────────────────────────────────────────────
 
-[processor.luacheck]
+[processor.checker.luacheck]
 src_dirs = ["config"]
 
 # ─── toml / yaml / json ──────────────────────────────────────────────────────
 
-[processor.taplo]
+[processor.checker.taplo]
 src_files = [".rumdl.marp.toml", ".rumdl.toml", "pyproject.toml", "rsconstruct.toml"]
 
-[processor.script.check_md]
+[processor.checker.script.check_md]
 command = "scripts/check_md.py"
 src_extensions = [".md"]
 src_dirs = ["marp"]
@@ -76,26 +76,26 @@ args = ["--fences", "--whitespace", "--links", "--labels"]
 # ─── repo-specific configuration ────────────────────────────────────────────
 
 # lint the GitHub Actions workflow files with actionlint
-[processor.actionlint]
+[processor.checker.actionlint]
 src_dirs = [".github/workflows"]
 
 # ─── yaml ────────────────────────────────────────────────────────────────────
 
-[processor.yamllint]
+[processor.checker.yamllint]
 src_files = ["text_labels.yaml"]
 
 # ─── json ────────────────────────────────────────────────────────────────────
 
-[processor.ijsonlint]
+[processor.checker.ijsonlint]
 src_files = [".mmdc.config.json", "package.json"]
 
 # ─── xml / svg ───────────────────────────────────────────────────────────────
 
-[processor.xmllint]
+[processor.checker.xmllint]
 src_dirs = ["images"]
 
 # ─── javascript ──────────────────────────────────────────────────────────────
 
-[processor.oxlint]
+[processor.checker.oxlint]
 src_files = [".marprc.mjs"]
 args = ["-c", ".oxlintrc.json"]
