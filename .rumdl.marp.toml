@@ -1,4 +1,4 @@
-# Markdown lint rules for Marp / Slidev slide decks (rsmultigit check-same,
+# Markdown lint rules for Marp / Slidev slide decks (rsmultigit check same,
 # shared across the slide repos). These files are slide source, not prose, and
 # several rules fight the format:
 #   MD041 - a deck opens with `---` YAML frontmatter, not a heading
