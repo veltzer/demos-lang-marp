@@ -17,14 +17,15 @@ Checks:
   --inline-svg  Flag inline <svg>...</svg> elements in markdown (forbidden — SVGs must be external files)
   --title-svg   Check that every 00_title.md has a corresponding svg/.../title.svg
   --title-count Enforce "one title per unit": each course has exactly one
-                00_title.md with a single `# Title`, and non-title chapters have none
+                00_title.md with a single `# Title`, and each lecture's first
+                slide has exactly one `# Title`
   --table-width Flag markdown tables with more than MAX_TABLE_COLUMNS columns
   --slide-length Flag slides with more than MAX_SLIDE_LINES non-blank body lines
 
 Usage:
-    check_md.py --links --labels file1.md file2.md ...
-    check_md.py --links marp/                          # scan a directory
-    check_md.py --labels marp/courses/foo.md           # single check on one file
+    check_marp_md.py --links --labels file1.md file2.md ...
+    check_marp_md.py --links marp/                          # scan a directory
+    check_marp_md.py --labels marp/courses/foo.md           # single check on one file
 """
 
 import argparse
