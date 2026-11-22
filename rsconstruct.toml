@@ -96,4 +96,5 @@ src_dirs = ["images"]
 
 [processor.checker.oxlint]
 src_files = [".marprc.mjs"]
-args = ["-c", ".oxlintrc.json"]
+args = ["-c", ".oxlintrc.repo.json"]
+dep_inputs = [".oxlintrc.repo.json"]
