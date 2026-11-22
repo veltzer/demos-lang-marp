@@ -90,6 +90,8 @@ src_files = [".mmdc.config.json", "package.json"]
 # ─── xml / svg ───────────────────────────────────────────────────────────────
 
 [processor.checker.ixmllint]
+# warnings fail too, not only fatal errors
+strict = true
 src_dirs = ["images"]
 
 # ─── javascript ──────────────────────────────────────────────────────────────
