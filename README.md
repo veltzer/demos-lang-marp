@@ -5,7 +5,7 @@
 
 description: Demos for Marp slides
 
-project website: https://veltzer.github.io/demos-lang-marp
+project website: <https://veltzer.github.io/demos-lang-marp>
 
 author: Mark Veltzer
 
