@@ -105,3 +105,9 @@ src_dirs = ["images"]
 src_files = [".marprc.mjs"]
 args = ["-c", ".oxlintrc.repo.json"]
 dep_inputs = [".oxlintrc.repo.json"]
+
+# every lint suppression names a rule and says why (see the fleet's CLAUDE.md)
+[processor.checker.suppressions]
+src_dirs = [".github", "config", "doc", "marp", "scripts"]
+src_files = [".marprc.mjs", ".yamllint.yaml", "README.md", "text_labels.yaml"]
+src_exclude_dirs = ["marp"]
