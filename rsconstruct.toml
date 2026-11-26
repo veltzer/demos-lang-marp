@@ -24,8 +24,8 @@ src_dirs = ["doc"]
 src_files = ["README.md"]
 src_exclude_dirs = ["marp"]
 
-# the slide decks are linted with the slide-dialect config (.rumdl.marp.toml),
-# which turns off the rules the Marp format inherently violates.
+# the slide decks are linted with the slide config (.rumdl.marp.toml), which
+# also resolves links from the project root, where Marp addresses images from.
 [processor.checker.rumdl.slides]
 src_dirs = ["marp"]
 args = ["--config", ".rumdl.marp.toml"]

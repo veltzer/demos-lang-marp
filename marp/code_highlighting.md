@@ -1,4 +1,4 @@
-## Example Rust Code
+# Example Rust Code
 
 ```rust
 fn main() {

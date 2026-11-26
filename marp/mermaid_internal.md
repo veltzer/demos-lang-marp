@@ -2,13 +2,13 @@
 marp: true
 ---
 
+# My Presentation
+
 <!-- Add Mermaid.js support -->
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>
   mermaid.initialize({ startOnLoad: true });
 </script>
-
-# My Presentation
 
 ## With Mermaid Diagrams
 

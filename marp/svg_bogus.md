@@ -20,6 +20,8 @@ To catch these issues at build time, use external linters:
 
 Marp warns on stderr but still exits 0.
 
+<!-- teaching: the file is missing on purpose, to show what Marp does with it -->
+<!-- rumdl-disable-next-line MD057 -->
 ![missing](images/this_does_not_exist.svg)
 
 ---

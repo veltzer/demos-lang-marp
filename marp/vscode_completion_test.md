@@ -7,7 +7,7 @@ backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
 ---
 
-This is the first slide
+# This is the first slide
 
 ```python
 def add(a: int, b:int):
