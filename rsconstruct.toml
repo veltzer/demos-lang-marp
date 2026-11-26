@@ -55,7 +55,7 @@ src_dirs = ["config"]
 # ─── toml / yaml / json ──────────────────────────────────────────────────────
 
 [processor.checker.taplo]
-src_files = [".rumdl.marp.toml", ".rumdl.toml", "pyproject.toml", "rsconstruct.toml"]
+src_files = [".ruff.toml", ".rumdl.marp.toml", ".rumdl.toml", "pyproject.toml", "rsconstruct.toml"]
 
 [processor.checker.script.check_marp_md]
 command = "scripts/check_marp_md.py"
