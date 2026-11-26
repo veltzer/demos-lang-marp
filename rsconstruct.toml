@@ -84,7 +84,8 @@ args = ["--offline", "--no-progress", "--persona=pedantic"]
 # ─── yaml ────────────────────────────────────────────────────────────────────
 
 [processor.checker.iyamllint]
-src_files = ["text_labels.yaml"]
+src_dirs = [".github"]
+src_files = ["text_labels.yaml", ".yamllint.yaml"]
 
 # ─── json ────────────────────────────────────────────────────────────────────
 
