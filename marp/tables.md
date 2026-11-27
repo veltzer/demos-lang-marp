@@ -7,29 +7,29 @@ marp: true
 
 # Tables in Marp
 
-| Name    | Language | Year |
-|---------|----------|------|
-| Linux   | C        | 1991 |
-| Python  | C        | 1991 |
-| Rust    | Rust     | 2010 |
+| Name   | Language | Year |
+| ------ | -------- | ---- |
+| Linux  | C        | 1991 |
+| Python | C        | 1991 |
+| Rust   | Rust     | 2010 |
 
 ---
 
 ## Column Alignment
 
-| Left-aligned | Centered   | Right-aligned |
-|:-------------|:----------:|--------------:|
-| apples       | 10         | $1.50         |
-| bananas      | 25         | $0.75         |
-| cherries     | 100        | $3.00         |
+| Left-aligned | Centered | Right-aligned |
+| :----------- | :------: | ------------: |
+| apples       |    10    |         $1.50 |
+| bananas      |    25    |         $0.75 |
+| cherries     |   100    |         $3.00 |
 
 ---
 
 ## Table with Emphasis
 
-| Feature        | Supported |
-|----------------|-----------|
-| **Bold text**  | Yes       |
-| *Italic text*  | Yes       |
-| `Inline code`  | Yes       |
-| ~~Strikethrough~~ | Yes    |
+| Feature           | Supported |
+| ----------------- | --------- |
+| **Bold text**     | Yes       |
+| *Italic text*     | Yes       |
+| `Inline code`     | Yes       |
+| ~~Strikethrough~~ | Yes       |

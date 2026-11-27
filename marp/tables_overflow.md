@@ -9,7 +9,7 @@ marp: true
 # Table Overflow: Too Many Columns
 
 | Col1 | Col2 | Col3 | Col4 | Col5 | Col6 | Col7 | Col8 | Col9 | Col10 | Col11 | Col12 | Col13 | Col14 | Col15 |
-|------|------|------|------|------|------|------|------|------|-------|-------|-------|-------|-------|-------|
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ----- | ----- | ----- | ----- | ----- | ----- |
 | v    | v    | v    | v    | v    | v    | v    | v    | v    | v     | v     | v     | v     | v     | v     |
 | w    | w    | w    | w    | w    | w    | w    | w    | w    | w     | w     | w     | w     | w     | w     |
 
@@ -19,10 +19,10 @@ Rightmost columns disappear off the slide edge.
 
 ## No Overflow: Wide Cell Content
 
-| Name | Description |
-|------|-------------|
+| Name | Description                                                                                                                                                                                                                         |
+| ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | A    | This is a very long description that contains so many words it forces the cell to grow beyond the available slide width and the text runs off the right edge of the rendered slide, silently, with no build-time warning from Marp. |
-| B    | short                                                                                                                                                                                                                                |
+| B    | short                                                                                                                                                                                                                               |
 
 Long prose wraps within the cell — no overflow.
 
@@ -31,7 +31,7 @@ Long prose wraps within the cell — no overflow.
 ## Table Overflow: Long Unbreakable Tokens
 
 | Identifier                                                                     | Value |
-|--------------------------------------------------------------------------------|-------|
+| ------------------------------------------------------------------------------ | ----- |
 | `some_very_long_snake_case_identifier_that_cannot_wrap_because_it_is_one_word` | 42    |
 | `another_looooooooooooooooooooooooooooooooooooooooooong_backtick_token_here`   | 99    |
 

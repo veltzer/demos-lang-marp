@@ -405,16 +405,16 @@ Content below the rule.
 
 Compare inline code styling with fenced code blocks.
 
-```markdown
+````markdown
 Use `inline code` for short references.
 
-​```javascript
+```javascript
 // Fenced code blocks for longer snippets
 function hello() {
   console.log("world");
 }
-​```
 ```
+````
 
 ### Links and autolinks
 
@@ -505,7 +505,7 @@ themeSet:
 Demos that already exist:
 
 | Feature | File |
-|---------|------|
+| --------- | ------ |
 | Background images | `marp/background.md` |
 | Bullet lists | `marp/list_bullet.md` |
 | Charts | `marp/chart.md` |
