@@ -1,9 +1,8 @@
 ---
-marp: true
-
 # Marp silently clips tables that are too wide for a slide.
 # No build error — you only notice when viewing the rendered PDF.
 # This file shows three ways tables overflow.
+marp: true
 ---
 
 # Table Overflow: Too Many Columns

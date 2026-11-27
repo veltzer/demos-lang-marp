@@ -1,10 +1,10 @@
 ---
-marp: true
-theme: gaia
 _class: lead
-paginate: true
 backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
+marp: true
+paginate: true
+theme: gaia
 ---
 
 ![bg left:40% 80%](https://marp.app/assets/marp.svg)

@@ -1,7 +1,6 @@
 ---
-marp: true
-
 # The important part here is that you need to mark the list as "1." and marp will do the rest
+marp: true
 ---
 
 # Numbered Lists in Marp

@@ -1,8 +1,7 @@
 ---
-marp: true
-
 # Tables use standard Markdown pipe syntax. Marp styles them automatically.
 # Use colons in the separator row to control alignment: left, center, right.
+marp: true
 ---
 
 # Tables in Marp

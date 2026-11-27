@@ -1,7 +1,7 @@
 ---
 marp: true
-theme: default
 math: mathjax
+theme: default
 ---
 
 # Marp Presentation with LaTeX

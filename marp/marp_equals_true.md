@@ -1,9 +1,9 @@
 ---
+paginate: true
 # comment the following "marp: true" line to see it's effect
 # this has not effect on regular marp cli tools but does have effect in vscode and the like
 # marp: true
 theme: default
-paginate: true
 ---
 
 # First Slide
